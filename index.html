@@ -38,7 +38,18 @@
       You are allowed and encouraged to create additional functions or
       components in order to complete this task.
       */
-      const Body = (props) => null;
+      const Body = (props) => {
+        return (
+          <tbody>
+            { 
+              // map each user in props.results to a table row with a cell for each property value
+              props.results.map((user) => (
+                <tr><td>{user.name}</td><td>{user.username}</td><td>{user.email}</td><td>{user.phone}</td></tr>
+              ))
+            }
+          </tbody>
+        );
+      };
 
       ReactDOM.render(
         <Table results={RESULTS} />,
