@@ -51,10 +51,22 @@
         );
       };
 
-      // tr component for each user property value
+      // tr component for each user
       const TRow = (props) => {
         return (
-          <tr><td>{props.user.name}</td><td>{props.user.username}</td><td>{props.user.email}</td><td>{props.user.phone}</td></tr>
+          <tr>
+            <TCell user_prop={props.user.name} />
+            <TCell user_prop={props.user.username} />
+            <TCell user_prop={props.user.email} />
+            <TCell user_prop={props.user.phone} />
+          </tr>
+        );
+      }
+
+      // td component for each user property
+      const TCell = (props) => {
+        return (
+          <td>{props.user_prop}</td>
         );
       }
  
