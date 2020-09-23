@@ -42,15 +42,22 @@
         return (
           <tbody>
             { 
-              // map each user in props.results to a table row with a cell for each property value
+              // map each user in props.results to a table row component
               props.results.map((user) => (
-                <tr><td>{user.name}</td><td>{user.username}</td><td>{user.email}</td><td>{user.phone}</td></tr>
+                <TRow user={user} />
               ))
             }
           </tbody>
         );
       };
 
+      // tr component for each user property value
+      const TRow = (props) => {
+        return (
+          <tr><td>{props.user.name}</td><td>{props.user.username}</td><td>{props.user.email}</td><td>{props.user.phone}</td></tr>
+        );
+      }
+ 
       ReactDOM.render(
         <Table results={RESULTS} />,
         document.getElementById("root")
